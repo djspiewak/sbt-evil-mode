@@ -16,6 +16,8 @@
 
 name := "sbt-evil-mode"
 
+sbtPlugin in Global := true
+
 baseVersion in ThisBuild := "0.1"
 
 organization in ThisBuild := "com.codecommit"

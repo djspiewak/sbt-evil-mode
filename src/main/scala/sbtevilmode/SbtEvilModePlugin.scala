@@ -12,6 +12,21 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
-*/
+ */
 
-package object sbtevilmode
+package sbtevilmode
+
+import sbt._
+
+object SbtEvilModePlugin extends AutoPlugin {
+
+  override def requires = plugins.JvmPlugin
+  override def trigger = allRequirements
+
+  object autoImport {
+    def GitHub(owner: String, repo: String, hash: String, name: Option[String] = None): ProjectReference = {
+      val id = uri(s"git://github.com/$owner/$repo.git#$hash")
+      name.map(ProjectRef(id, _)).getOrElse(RootProject(id))
+    }
+  }
+}
