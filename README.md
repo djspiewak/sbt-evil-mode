@@ -6,7 +6,7 @@ Don't do this. Don't do any of it.
 
 ```sbt
 // in plugins.sbt
-addSbtPlugin("com.codecommit" % "sbt-evil-mode" % "0.1-53ac5ef")
+addSbtPlugin("com.codecommit" % "sbt-evil-mode" % "0.1-bdad513")
 ```
 
 ### GitHub Source Dependencies
