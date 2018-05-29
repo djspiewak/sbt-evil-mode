@@ -18,6 +18,8 @@ name := "sbt-evil-mode"
 
 sbtPlugin in Global := true
 
+bintrayVcsUrl in ThisBuild := Some("git@github.com:djspiewak/sbt-evil-mode.git")
+
 baseVersion in ThisBuild := "0.1"
 
 organization in ThisBuild := "com.codecommit"
