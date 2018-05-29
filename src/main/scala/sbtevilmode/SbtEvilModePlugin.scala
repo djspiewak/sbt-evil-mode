@@ -24,9 +24,12 @@ object SbtEvilModePlugin extends AutoPlugin {
   override def trigger = allRequirements
 
   object autoImport {
-    def GitHub(owner: String, repo: String, hash: String, name: Option[String] = None): ProjectReference = {
-      val id = uri(s"git://github.com/$owner/$repo.git#$hash")
-      name.map(ProjectRef(id, _)).getOrElse(RootProject(id))
+    implicit class EvilModeRichProject(val self: Project) extends AnyVal {
+      def gitHubDependency(owner: String, repo: String, hash: String, name: Option[String] = None) = {
+        val id = uri(s"git://github.com/$owner/$repo.git#$hash")
+        val ref = name.map(ProjectRef(id, _)).getOrElse(RootProject(id))
+        self.dependsOn(ref)
+      }
     }
   }
 }

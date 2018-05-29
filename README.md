@@ -14,7 +14,7 @@ addSbtPlugin("com.codecommit" % "sbt-evil-mode" % "0.1-53ac5ef")
 ```sbt
 lazy val root = project
   .in(file("."))
-  .dependsOn(GitHub("djspiewak", "scala-collections", "c785a40"))
+  .gitHubDependency("djspiewak", "scala-collections", "c785a40")
 ```
 
 The above creates a source dependency on hash `c785a40` of the [djspiewak/scala-collections](https://github.com/djspiewak/scala-collections) project on github. Don't do this. Oh, tags probably also work. Haven't tried it. You shouldn't either.
