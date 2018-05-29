@@ -6,9 +6,6 @@ Don't do this. Don't do any of it.
 
 ```sbt
 // in plugins.sbt
-resolvers += Resolver.url("djspiewak-sbt-plugins", url("https://dl.bintray.com/djspiewak/sbt-plugins"))(Resolver.ivyStylePatterns)
-
-
 addSbtPlugin("com.codecommit" % "sbt-evil-mode" % "0.1-53ac5ef")
 ```
 
